@@ -8,7 +8,7 @@ export const AuthCheck=async(req,res,next)=>{
        
     
         if(!token){
-            return res.json("Invalid credentials");
+            return res.json("Invalid credentials of token not found");
         }
         
 

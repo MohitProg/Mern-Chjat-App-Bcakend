@@ -87,7 +87,8 @@ export const LoginUser = async (req, res) => {
       .cookie("token", token, {
         httpOnly: true,
         secure:true,
-        expires:new Date(Date.now()+25892000000)
+        expires:new Date(Date.now()+25892000000),
+        sameSite:'none'
       })
       .json(new ApiResponse(200, checkexituser, "User login Successfully"));
   } catch (error) {

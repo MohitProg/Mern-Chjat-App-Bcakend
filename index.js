@@ -16,8 +16,13 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
+const allowedOrigins = [
+    'https://webtalkchat-76b86.web.app',
+    'http://localhost:5173'
+  
+  ];
 app.use(cors({
-   
+    origin:allowedOrigins,
     credentials:true
 }))
 
